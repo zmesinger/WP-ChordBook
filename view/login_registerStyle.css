@@ -1,0 +1,23 @@
+body{
+    background: url("https://external-preview.redd.it/IOv1TDNTT-C3D6ZxsDZr41dSC_5qR6M4dfu85kUka6g.jpg?auto=webp&s=1c2dd8833ae226f5d9b5e85efa01538657911d1f") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.image-text{
+    color: white;
+}
+
+.formLabels{
+    color: white;
+    font-size: larger;
+    
+}
+#formLogin{
+    border-style: solid;
+    border: white;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: grey;
+}
