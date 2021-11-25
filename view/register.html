@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Chord Book - Login/Register</title>
+    <title>Chord Book - Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style/login_registerStyle.css">
     <script src="../controller/index.js"></script>
@@ -37,6 +37,10 @@
         <div class="container-fluid col-sm-4">
             <form class="form-horizontal" id="formLogin">
                 <p>
+                    <label for="username" class="control-label col-sm-2">Username:</label><br>
+                    <input type="text" class="form-control" placeholder="Enter username">
+                </p>
+                <p>
                     <label for="email" class="control-label col-sm-2">E-mail adress:</label><br>
                     <input type="email" class="form-control" placeholder="Enter e-mail adress">
                 </p>
@@ -45,8 +49,8 @@
                     <input type="password" class="form-control" placeholder="Enter password">
                 </p>
                 <p>
-                    <button type="button" class="col-sm-3 btn btn-primary" id="loginButton" onclick="alertMe()">Log in</button>
-                    <button type="button" class="col-sm-3 float-end btn btn-light" id="registerButton" onclick="linkToRegisterForm()">Register</button>
+                    <button type="button" class="col-sm-3 btn btn-primary disabled" id="loginButton">Log in</button>
+                    <button type="submit" class="col-sm-3 float-end btn btn-light" id="registerButton" onclick="linkToRegisterForm()">Register</button>
                 </p>
     
             </form>
