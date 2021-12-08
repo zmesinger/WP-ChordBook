@@ -25,6 +25,10 @@
                     <li class="nav-item">
                       <a class="nav-link" href="all_chords.html">Explore Chords</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="new_song.html">Add New</a>
+                      </li>
+                    
                     
                   </ul>
             </div>
@@ -42,7 +46,7 @@
                 </p>
                 <p>
                     <label for="email" class="control-label col-sm-2">E-mail adress:</label><br>
-                    <input type="email" class="form-control" placeholder="Enter e-mail adress">
+                    <input type="email" class="form-control" id="email" placeholder="Enter e-mail adress">
                 </p>
                 <p>
                     <label for="password" class="control-label col-sm-2">Password:</label><br>
@@ -50,7 +54,7 @@
                 </p>
                 <p>
                     <button type="button" class="col-sm-3 btn btn-primary disabled" id="loginButton">Log in</button>
-                    <button type="submit" class="col-sm-3 float-end btn btn-light" id="registerButton" onclick="linkToRegisterForm()">Register</button>
+                    <button type="submit" class="col-sm-3 float-end btn btn-light" id="registerButton" onclick="isEmail()">Register</button>
                 </p>
     
             </form>
