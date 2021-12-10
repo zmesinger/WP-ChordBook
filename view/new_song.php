@@ -16,13 +16,13 @@
                 <div class="container-fluid">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                          <a class="nav-link" href="index.html">Home</a>
+                          <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="login_register.html">Login/Register</a>
+                          <a class="nav-link" href="login_register.php">Login/Register</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="all_chords.html">Explore Chords</a>
+                          <a class="nav-link" href="all_chords.php">Explore Chords</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Add New</a>

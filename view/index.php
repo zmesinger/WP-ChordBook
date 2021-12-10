@@ -24,13 +24,13 @@
                           <a class="nav-link active" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="login_register.html">Login/Register</a>
+                          <a class="nav-link" href="login_register.php">Login/Register</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="all_chords.html">Explore Chords</a>
+                          <a class="nav-link" href="all_chords.php">Explore Chords</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="new_song.html">Add New</a>
+                          <a class="nav-link" href="new_song.php">Add New</a>
                         </li>
                       
                         
@@ -47,7 +47,7 @@
         </div>
         <div class="col-sm-6 text-center container-fluid">
             <h3 class="text-sm-center text-white font">Log in/Register</h3>
-            <img src="https://www.dnnsoftware.com/portals/0/Images/DNN/findProviders.png" alt="imgLoginRegister" class="img-fluid" id="imgLoginRegister" onclick="linkToRegisterForm()">
+            <img src="https://www.dnnsoftware.com/portals/0/Images/DNN/findProviders.png" alt="imgLoginRegister" class="img-fluid" id="imgLoginRegister" onclick="linkToLoginForm()">
         </div>
     
 

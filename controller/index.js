@@ -1,9 +1,13 @@
 function linkToRegisterForm(){
-    window.location='../view/register.html';
+    window.location='../view/register.php';
+}
+
+function linkToLoginForm(){
+    window.location='../view/login_register.php';
 }
 
 function linkToAllChords(){
-    window.location='../view/all_chords.html';
+    window.location='../view/all_chords.php';
 }
 
 function checkIfEmail(){
