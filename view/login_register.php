@@ -10,7 +10,7 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style/login_registerStyle.css">
     <script src="../controller/index.js"></script>
-    
+
 </head>
 
 <body>
@@ -23,7 +23,7 @@ session_start();
 
         $sql = "SELECT * FROM user";
         $q = mysqli_query($conn, $sql);
-        
+      
 
         while($line = mysqli_fetch_array($q, MYSQLI_ASSOC)){
             if($_POST['email'] == $line["email"] && $_POST['password'] == $line["password"]){
@@ -41,7 +41,7 @@ session_start();
                 }
 
             }else{
-                $msg = "Krivo korisničko ime ili lozinka";
+                $msg = "Wrong username or password!";
             }
         }
 

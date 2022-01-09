@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +13,17 @@
 </head>
 
 <body>
+
+<?php 
+    include "../database/database.php";
+
+    if (!(isset($_SESSION['logged']) && $_SESSION['logged'] == true)) {
+            header("Location: login_register.php");
+    }
+
+    ?>
+
+
     <div class="row">
         <div class="col-sm-12 text-center container-fluid">
             <img src="https://www.kenmoreinn.com/wp-content/uploads/2017/11/guitar-header.jpg" alt="guitarImage" class="img-fluid  rounded-3 h-50 w-75" id="imgGuitar">

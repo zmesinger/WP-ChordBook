@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -11,6 +14,8 @@
         <script src="../controller/index.js"></script>
         
     </head>
+
+    
     
     <div class="row" id="header">
         <div class="col-sm-12 text-center container-fluid">
@@ -48,28 +53,27 @@
                     <th scope="col">#</th>
                     <th scope="col">Song</th>
                     <th scope="col">Artist</th>
-                    <th scope="col">Chords Author</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                <?php
+                    include "../database/database.php";
+
+                    $records = mysqli_query($conn, "SELECT * FROM chord" );
+
+                    while($data = mysqli_fetch_array($records)){
+                      ?>
+                        <tr>
+                          <td><?php echo $data['id']; ?></td>
+                          <td><?php echo $data['song']; ?></td>
+                          <td><?php echo $data['artist']; ?></td>                          
+                        </tr>	
+                      <?php
+                    }
+
+
+                ?>
                 </tbody>
               </table>
 
