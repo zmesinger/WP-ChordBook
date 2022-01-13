@@ -27,6 +27,7 @@ session_start();
 
         while($line = mysqli_fetch_array($q, MYSQLI_ASSOC)){
             if($_POST['email'] == $line["email"] && $_POST['password'] == $line["password"]){
+                $_SESSION['userid'] = $line['id'];
                 $_SESSION['logged'] = true;
                 $_SESSION['time'] = time();
                 $_SESSION['email'] = $_POST['email'];
@@ -49,6 +50,7 @@ session_start();
     ?>
 
 
+                        
 <div class="row" id="header">
     <div class="col-sm-12 text-center container-fluid">
         <img src="https://www.kenmoreinn.com/wp-content/uploads/2017/11/guitar-header.jpg" alt="guitarImage" class="img-fluid  rounded-3 h-50 w-75" id="imgGuitar">
@@ -100,6 +102,7 @@ session_start();
         <div class="container-fluid col-sm-3"></div>
     
     </div>
+
 
 
 </body>

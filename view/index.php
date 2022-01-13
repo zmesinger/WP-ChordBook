@@ -32,6 +32,15 @@
                         <li class="nav-item">
                           <a class="nav-link" href="new_song.php">Add New</a>
                         </li>
+                        <?php
+                        if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+                        ?>
+                        <li class="nav-item">
+                           <a class="" href="logout.php">Logout</a>
+                        </li>
+                        <?php
+                        }
+                        ?>
                       
                         
                       </ul>

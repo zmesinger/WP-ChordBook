@@ -22,7 +22,7 @@ session_start();
             <img src="https://www.kenmoreinn.com/wp-content/uploads/2017/11/guitar-header.jpg" alt="guitarImage" class="img-fluid  rounded-3 h-50 w-75" id="imgGuitar">
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
                 <div class="container-fluid">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav " style="display: flex; justify-content: flex-end;">
                         <li class="nav-item">
                           <a class="nav-link" href="index.php">Home</a>
                         </li>
@@ -35,6 +35,16 @@ session_start();
                         <li class="nav-item">
                           <a class="nav-link" href="new_song.php">Add New</a>
                         </li>
+                        <?php
+                        if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+                        ?>
+                        <li class="nav-item">
+                           <a class="" href="logout.php">Logout</a>
+                        </li>
+                        <?php
+                        }
+                        ?>
+                        
                       
                         
                       </ul>
@@ -50,7 +60,7 @@ session_start();
             <table class="table table-dark">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col"># ID</th>
                     <th scope="col">Song</th>
                     <th scope="col">Artist</th>
                     

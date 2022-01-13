@@ -14,14 +14,7 @@ session_start();
 
 <body>
 
-<?php 
-    include "../database/database.php";
 
-    if (!(isset($_SESSION['logged']) && $_SESSION['logged'] == true)) {
-            header("Location: login_register.php");
-    }
-
-    ?>
 
 
     <div class="row">
@@ -49,20 +42,26 @@ session_start();
     </div>
 
 
+
+
     <div class="row">
         <div class="container-fluid col-sm-3"></div>
             <div class="container-fluid col-sm-4">
-                <form class="form-horizontal" id="formNewSong">
+                <form action="insert_song.php" class="form-horizontal" id="formNewSong" method="post">
                     <p>
                         <label for="Artist" class="control-label col-sm-2">Artist:</label><br>
-                        <input type="text" class="form-control" placeholder="Enter song artist" required>
+                        <input type="text" class="form-control" name="artist" placeholder="Enter song artist" required>
+                    </p>
+                    <p>
+                        <label for="Song" class="control-label col-sm-2">Song Name:</label><br>
+                        <input type="text" class="form-control" name="song" placeholder="Enter song name" required>
                     </p>
                     <p>
                         <label for="Chords" class="control-label col-sm-2">Song/Chords:</label><br>
-                        <textarea class="form-control col-sm-12" name="chords" id="chords" rows="25" placeholder="Enter transcription" required></textarea>
+                        <textarea class="form-control col-sm-12" name="content" rows="25" placeholder="Enter transcription" required></textarea>
                     </p>
                     <p>
-                        <button type="submit" class="col-sm-3 btn btn-primary" id="addNewButton">Submit</button>
+                        <button type="submit" class="col-sm-3 btn btn-primary" name="submit">Submit</button>
                         
                     </p>
                      
