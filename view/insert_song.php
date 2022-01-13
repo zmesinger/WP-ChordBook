@@ -17,9 +17,7 @@ if(isset($_POST['submit'])){
      $sql = "INSERT INTO chord (author,content,artist,song)
      VALUES ('$author','$content','$artist', '$song')";
      if (mysqli_query($conn, $sql)) {
-        ?>
-        <script>alert("Chords inserted successfully!")</script>
-        <?php
+        header("Location: all_chords.php");
      } else {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
      }

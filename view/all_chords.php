@@ -32,15 +32,16 @@ session_start();
                         <li class="nav-item">
                           <a class="nav-link active" href="all_chords.php">Explore Chords</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="new_song.php">Add New</a>
-                        </li>
                         <?php
-                        if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+                    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                         ?>
+                        <li class="nav-item">
+                              <a class="nav-link" href="new_song.php">Add New</a>
+                            </li>
                         <li class="nav-item">
                            <a class="" href="logout.php">Logout</a>
                         </li>
+                        
                         <?php
                         }
                         ?>
@@ -63,25 +64,27 @@ session_start();
                     <th scope="col"># ID</th>
                     <th scope="col">Song</th>
                     <th scope="col">Artist</th>
+                    <th scope="col">User</th>
                     
                   </tr>
                 </thead>
                 <tbody>
                 <?php
                     include "../database/database.php";
-
-                    $records = mysqli_query($conn, "SELECT * FROM chord" );
-
+                    $sql = "SELECT chord.id, chord.song, chord.artist, user.username FROM chord 
+                    LEFT JOIN user ON chord.author = user.id";
+                    $records = mysqli_query($conn, $sql);
                     while($data = mysqli_fetch_array($records)){
                       ?>
                         <tr>
                           <td><?php echo $data['id']; ?></td>
                           <td><?php echo $data['song']; ?></td>
-                          <td><?php echo $data['artist']; ?></td>                          
+                          <td><?php echo $data['artist']; ?></td> 
+                          <td><?php echo $data['username']; ?></td>                      
                         </tr>	
                       <?php
                     }
-
+                  
 
                 ?>
                 </tbody>

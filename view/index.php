@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -29,18 +33,20 @@
                         <li class="nav-item">
                           <a class="nav-link" href="all_chords.php">Explore Chords</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="new_song.php">Add New</a>
-                        </li>
                         <?php
-                        if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+                    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                         ?>
+                        <li class="nav-item">
+                              <a class="nav-link" href="new_song.php">Add New</a>
+                            </li>
                         <li class="nav-item">
                            <a class="" href="logout.php">Logout</a>
                         </li>
+                        
                         <?php
                         }
                         ?>
+                        
                       
                         
                       </ul>
