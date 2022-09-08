@@ -2,6 +2,7 @@
 session_start();
 ?>
 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -52,55 +53,28 @@ session_start();
                   </nav>
             </div>
         </div>
+        <?php
+                    include "../database/database.php";
+                    
+                    if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    $sql = "SELECT * FROM `chord` WHERE `id` = $id";
+                    $records = mysqli_query($conn, $sql);
+                    $data = mysqli_fetch_assoc($records);
+                    }
+                      ?>
+        
 
         <div class="row">
             <div class="container-fluid col-sm-3"></div>
                 <div class="container-fluid col-sm-4">
                     <p id="chordParam">
-                        <label for="author">Author:Tutlek</label><br>
-                        <label for="songArtist">Artist: Aerodrom</label><br>
-                        <label for="songName">Song Name: Digni Me Visoko</label><br><br>
+                        <label for="author">Author: <?php echo "admin" ?></label><br>
+                        <label for="songArtist">Artist:  <?php echo $data['artist'] ?> </label><br>
+                        <label for="songName">Song Name: <?php echo $data['song'] ?></label><br><br>
                         <textarea name="textChord" class="form-control disabled col-sm-12" id="textChord"rows="25">
-                            C
-                            Uzmi me sa sobom i povedi me
-                              G            C           G
-                            I povedi me, i povedi me
-                            C
-                            Digni me visoko da ti ispričam
-                                  G                C           G
-                            Svoje snove sve, svoje snove sve.
-                            
-                            
-                            Odvedi me do mora gdje su djevojke
-                            Gdje su djevojke, gdje su djevojke
-                            Koje nikad nikom nisu rekle ne
-                            Nisu rekle ne, nisu rekle ne.
-                            
-                            
-                            Am                C
-                            Al' ja ipak nisam luda
-                            Am             C
-                            Koja vjeruje u čuda
-                            Am               C
-                            Što se kriju iza mora
-                              F        G
-                            I gora dalekih.
-                            
-                            
-                            Spusti me na zamlju, ali oprezno
-                            Ali oprezno, ali oprezno
-                            Hrabar sam, ali neću izazivat zlo
-                            Izazivat zlo, izazivat zlo.
-                            
-                            Možda jednog dana ipak uspijem
-                            Ipak uspijem ipak uspijem
-                            Samo ako prije se ne napijem
-                            Se ne napijem, se ne napijem.
-                            
-                            Jer ja ipak nisam luda
-                            Koja vjeruje u čuda
-                            Što se kriju iza mora
-                            I gora dalekih.</textarea>
+                        <?php echo $data['content'] ?>
+                            </textarea>
                     </p>
                 </div>
                 <div class="container-fluid col-sm-3"></div>

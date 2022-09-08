@@ -65,6 +65,7 @@ session_start();
                     <th scope="col">Song</th>
                     <th scope="col">Artist</th>
                     <th scope="col">User</th>
+                    <th scope="col">Action</th>
                     
                   </tr>
                 </thead>
@@ -80,7 +81,8 @@ session_start();
                           <td><?php echo $data['id']; ?></td>
                           <td><?php echo $data['song']; ?></td>
                           <td><?php echo $data['artist']; ?></td> 
-                          <td><?php echo $data['username']; ?></td>                      
+                          <td><?php echo $data['username']; ?></td>
+                          <td><a href="chord.php?id=<?php echo $data['id'] ?>" class="btn btn-primary">View chord</a></td>                      
                         </tr>	
                       <?php
                     }
